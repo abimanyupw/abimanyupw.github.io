@@ -503,7 +503,7 @@ body {
   margin: auto;
   font-weight: 200;
   line-height: 1.6;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .menu .row {
@@ -947,9 +947,6 @@ footer .credits a {
   }
   .about .toko-img {
     flex: 1 1 100%;
-  }
-  .menu p {
-    font-size: 1.3rem;
   }
   .contact .row {
     flex-wrap: wrap;
