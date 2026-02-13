@@ -96,7 +96,7 @@ const Certificates = () => {
   return (
     <div className="max-w-6xl mx-auto px-4">
       {/* GRID DAFTAR SERTIFIKAT */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {certificateList.map((c, i) => (
           <div
             key={i}
@@ -166,7 +166,7 @@ const Certificates = () => {
 
             <div
               data-aos="zoom-in"
-              className="relative bg-[#0a061e] border-t sm:border border-white/10 w-full max-w-xl 
+              className="relative bg-[#0a061e] border-t sm:border border-white/10 w-full max-w-md 
                          rounded-t-[2.5rem] sm:rounded-3xl overflow-hidden shadow-2xl 
                          max-h-[90vh] flex flex-col"
             >

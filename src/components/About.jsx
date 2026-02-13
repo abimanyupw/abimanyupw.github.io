@@ -3,17 +3,13 @@ import {
   User,
   Code2,
   Rocket,
-  BrainCircuit,
   Sparkles,
   Briefcase,
   Calendar,
   GraduationCap,
 } from "lucide-react";
 
-import { SiLaravel, SiReact, SiTailwindcss, SiFigma } from "react-icons/si"; // Koleksi Simple Icons (Rekomendasi)
-
-// Warna khas Laravel
-// Warna khas React
+import { SiLaravel, SiFigma } from "react-icons/si";
 
 export default function About() {
   const experiences = [
@@ -65,7 +61,7 @@ export default function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* KOLOM KIRI: TEKS DESKRIPSI & STATS */}
+          {/* LEFT SIDE */}
           <div className="space-y-12">
             <div data-aos="fade-right">
               <h3 className="text-4xl font-bold mb-6 flex items-center gap-3">
@@ -111,9 +107,9 @@ export default function About() {
             </div>
           </div>
 
-          {/* KOLOM KANAN: TIMELINE (WORK & EDU) */}
+          {/* RIGHT SIDE */}
           <div className="grid grid-cols-1 gap-10">
-            {/* WORK EXPERIENCE */}
+            {/* WORK */}
             <div data-aos="fade-left">
               <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
                 <Briefcase className="text-indigo-500" size={24} />
@@ -157,24 +153,29 @@ export default function About() {
   );
 }
 
-// Komponen Pembantu untuk Item Timeline
+/* ========================= */
+/* TIMELINE ITEM */
+/* ========================= */
 function TimelineItem({ title, subtitle, period, desc }) {
   return (
     <div className="relative">
       <div className="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.8)] border-4 border-[#030014]"></div>
-      <div className="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 transition-all group">
-        <div className="flex flex-col mb-2">
-          <div className="flex justify-between items-start gap-2">
-            <h4 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors leading-tight">
-              {title}
-            </h4>
-            <span className="flex items-center gap-1.5 text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-full shrink-0">
-              <Calendar size={10} /> {period}
-            </span>
-          </div>
+
+      <div className="relative bg-white/5 border border-white/10 p-5 pb-14 rounded-2xl hover:bg-white/10 transition-all group">
+        {/* CONTENT */}
+        <div className="mb-4">
+          <h4 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors leading-tight">
+            {title}
+          </h4>
+
           <p className="text-blue-400 text-sm font-medium mt-1">{subtitle}</p>
         </div>
-        <p className="text-gray-400 text-xs leading-relaxed">{desc}</p>
+
+        <p className="text-gray-400 text-xs leading-relaxed mb-4">{desc}</p>
+
+        <span className="absolute bottom-4 right-4 flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-full">
+          <Calendar size={10} /> {period}
+        </span>
       </div>
     </div>
   );
