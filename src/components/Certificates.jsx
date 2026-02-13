@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import {
   X,
   ExternalLink,
@@ -10,6 +11,19 @@ import {
 
 const Certificates = () => {
   const [selectedCert, setSelectedCert] = useState(null);
+
+  // Lock scroll saat modal aktif
+  useEffect(() => {
+    if (selectedCert) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedCert]);
 
   const certificateList = [
     {
@@ -43,19 +57,11 @@ const Certificates = () => {
         "Menyelesaikan kelas belajar backend pemula dengan javascript.",
     },
     {
-      title: "Belajar dasar pemrograman web",
-      issuer: "Dicoding Indonesia",
-      image: "certif/dicoding-dasar-web.jpg",
-      date: "November 2024 - November 2027",
-      description: "Menyelesaikan kelas belajar dasar pemrograman web.",
-    },
-    {
       title: "Belajar Membuat Front-End Web Untuk Pemula",
       issuer: "Dicoding Indonesia",
       image: "certif/dicoding-frontend.jpg",
       date: "Januari 2025 - Januari 2028",
-      description:
-        "Menyelesaikan kelas belajar  membuat Front-End Web untuk Pemula.",
+      description: "Menyelesaikan kelas belajar Front-End Web untuk Pemula.",
     },
     {
       title: "Cisco Dasar",
@@ -90,7 +96,7 @@ const Certificates = () => {
   return (
     <div className="max-w-6xl mx-auto px-4">
       {/* GRID DAFTAR SERTIFIKAT */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {certificateList.map((c, i) => (
           <div
             key={i}
@@ -149,105 +155,83 @@ const Certificates = () => {
         ))}
       </div>
 
-      {/* MODAL DETAIL */}
-      {selectedCert && (
-        <div className="fixed inset-0 z-[999] flex items-end sm:items-center justify-center p-0 sm:p-4 shadow-2xl">
-          <div
-            className="absolute inset-0 bg-[#030014]/90 backdrop-blur-md transition-opacity"
-            onClick={() => setSelectedCert(null)}
-          ></div>
-
-          <div
-            data-aos={window.innerWidth < 640 ? "fade-up" : "zoom-in"}
-            className="relative bg-[#0a061e] border-t sm:border border-white/10 w-full max-w-2xl 
-                       rounded-t-[2.5rem] sm:rounded-3xl overflow-hidden shadow-2xl 
-                       max-h-[90vh] flex flex-col"
-          >
-            <div className="w-12 h-1.5 bg-white/20 rounded-full mx-auto my-3 sm:hidden shrink-0"></div>
-
-            <button
+      {/* MODAL DETAIL (PORTAL FIX) */}
+      {selectedCert &&
+        ReactDOM.createPortal(
+          <div className="fixed inset-0 z-[99999] flex items-end sm:items-center justify-center p-0 sm:p-4">
+            <div
+              className="absolute inset-0 bg-[#030014]/90 backdrop-blur-md transition-opacity"
               onClick={() => setSelectedCert(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/5 text-white rounded-full 
-                         hover:bg-red-500/80 transition-all border border-white/10 shadow-xl"
+            ></div>
+
+            <div
+              data-aos="zoom-in"
+              className="relative bg-[#0a061e] border-t sm:border border-white/10 w-full max-w-xl 
+                         rounded-t-[2.5rem] sm:rounded-3xl overflow-hidden shadow-2xl 
+                         max-h-[90vh] flex flex-col"
             >
-              <X size={20} />
-            </button>
+              <div className="w-12 h-1.5 bg-white/20 rounded-full mx-auto my-3 sm:hidden shrink-0"></div>
 
-            <div className="overflow-y-auto no-scrollbar">
-              <div className="w-full h-56 sm:h-80 overflow-hidden relative">
-                <img
-                  src={selectedCert.image}
-                  alt={selectedCert.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a061e] via-transparent to-transparent"></div>
-              </div>
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-4 right-4 z-10 p-2 bg-white/5 text-white rounded-full 
+                           hover:bg-red-500/80 transition-all border border-white/10 shadow-xl"
+              >
+                <X size={20} />
+              </button>
 
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-2 text-indigo-400 text-xs sm:text-sm font-bold uppercase tracking-widest mb-3">
-                  <Sparkles size={16} />
-                  <span>Certificate Detail</span>
+              <div className="overflow-y-auto no-scrollbar">
+                <div className="w-full h-56 sm:h-80 overflow-hidden relative">
+                  <img
+                    src={selectedCert.image}
+                    alt={selectedCert.title}
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a061e] via-transparent to-transparent"></div>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
-                  {selectedCert.title}
-                </h2>
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center gap-2 text-indigo-400 text-xs sm:text-sm font-bold uppercase tracking-widest mb-3">
+                    <Sparkles size={16} />
+                    <span>Certificate Detail</span>
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5">
-                    <div className="p-2 bg-indigo-500/10 rounded-lg text-indigo-400">
-                      <Calendar size={20} />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold">
-                        Issued on
-                      </span>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
+                    {selectedCert.title}
+                  </h2>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5">
+                      <Calendar size={20} className="text-indigo-400" />
                       <span className="text-sm text-white font-medium">
                         {selectedCert.date}
                       </span>
                     </div>
-                  </div>
 
-                  <div className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5">
-                    <div className="p-2 bg-indigo-500/10 rounded-lg text-indigo-400">
-                      <ExternalLink size={20} />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold">
-                        Issuer
-                      </span>
+                    <div className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5">
+                      <Award size={20} className="text-indigo-400" />
                       <span className="text-sm text-white font-medium">
                         {selectedCert.issuer}
                       </span>
                     </div>
                   </div>
-                </div>
 
-                <div className="space-y-4">
-                  <h4 className="text-white font-semibold text-sm flex items-center gap-2 underline underline-offset-8 decoration-indigo-500/50">
-                    About this certification
-                  </h4>
                   <p className="text-slate-400 text-sm leading-relaxed italic bg-white/5 p-5 rounded-2xl border border-white/5 border-l-4 border-l-indigo-500">
                     "{selectedCert.description}"
                   </p>
-                </div>
 
-                <button
-                  onClick={() => setSelectedCert(null)}
-                  className="mt-10 w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all active:scale-95 shadow-lg shadow-indigo-600/30"
-                >
-                  Back to Certificates
-                </button>
+                  <button
+                    onClick={() => setSelectedCert(null)}
+                    className="mt-10 w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all"
+                  >
+                    Back to Certificates
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 };
