@@ -7,8 +7,8 @@ const Projects = () => {
       title: "AnyuNet",
       desc: "E-commerce platform for high-performance networking hardware and Wi-Fi solutions.",
       image: "anyunet.jpg",
-      githubLink: "https://github.com/abimanyupw/abimanyupw.github.io",
-      demoLink: "https://abimanyupw.github.io/",
+      githubLink: "https://github.com/abimanyupw/Anyunet",
+      demoLink: "https://anyunet.vercel.app/",
       techStack: ["HTML", "CSS", "Javascript", "Midtrans"],
     },
     {
@@ -29,7 +29,8 @@ const Projects = () => {
       title: "Portofolio",
       desc: "Modern portfolio built with React & Tailwind CSS for high performance..",
       image: "portofolio.jpg",
-      githubLink: "https://github.com/abimanyupw/nyamnyam-food-finder", // Link github kamu
+      githubLink: "https://github.com/abimanyupw/portofolio",
+      demoLink: "https://portofolio-mu-tawny.vercel.app/", // Link github kamu
       techStack: ["React", "Tailwind", "Vite"],
     },
   ];
