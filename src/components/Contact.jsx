@@ -65,7 +65,7 @@ export default function Contact() {
               <ContactInfo
                 icon={<Mail />}
                 title="Email"
-                value="abimanyupw@gmail.com"
+                value="abimanyupw572@gmail.com"
               />
               <ContactInfo
                 icon={<MapPin />}
