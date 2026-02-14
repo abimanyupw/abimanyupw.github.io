@@ -109,11 +109,6 @@ export default function About() {
                     </span>
                   </li>
                 </ul>
-
-                <p className="pt-4 border-t border-gray-800 italic">
-                  "Saya percaya bahwa teknologi terbaik lahir dari harmoni
-                  antara desain yang matang dan sistem yang tangguh."
-                </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4" data-aos="fade-up">
