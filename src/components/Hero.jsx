@@ -146,7 +146,7 @@ export default function Hero() {
             {/* Photo Container */}
             <div className="relative w-56 h-56 md:w-80 md:h-80 rounded-full border-4 border-[#030014] overflow-hidden bg-slate-900 shadow-2xl">
               <img
-                src="abimanyu.jpeg"
+                src="profile.jpeg"
                 alt="Abimanyu Profile"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
