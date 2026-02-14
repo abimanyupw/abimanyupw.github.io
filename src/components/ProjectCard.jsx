@@ -65,15 +65,26 @@ const ProjectCard = ({
 
           <div className="flex flex-col gap-3">
             <div className="flex gap-3">
-              <a
-                href={githubLink || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all"
-              >
-                <Github size={14} /> GitHub
-              </a>
-
+              {githubLink && (
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all"
+                >
+                  <Github size={14} /> GitHub
+                </a>
+              )}
+              {figmaLink && (
+                <a
+                  href={figmaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all"
+                >
+                  <Figma size={14} /> Figma Link
+                </a>
+              )}
               <button
                 onClick={() => setShowDetails(true)}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/5 text-white border border-white/10 rounded-xl text-xs font-bold hover:bg-white/10 transition-all"
@@ -90,16 +101,6 @@ const ProjectCard = ({
                 className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 transition-all shadow-lg shadow-indigo-600/20"
               >
                 <Globe size={14} /> Live Preview
-              </a>
-            )}
-            {figmaLink && (
-              <a
-                href={figmaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 transition-all shadow-lg shadow-indigo-600/20"
-              >
-                <Figma size={14} /> Figma Link
               </a>
             )}
           </div>
