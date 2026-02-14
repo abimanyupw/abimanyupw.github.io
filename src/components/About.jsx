@@ -16,8 +16,14 @@ export default function About() {
     {
       company: "JNET Global Network Solution",
       role: "Admin & Technician",
-      period: "July 2024 - Desember 2024",
+      period: "Juli 2024 - Desember 2024",
       desc: "Mengelola infrastruktur, menjaga keamanan data, serta memastikan konektivitas jaringan lancar.",
+    },
+    {
+      company: "SMK Negeri 1 Pungging",
+      role: "IT Support",
+      period: "September 2022 - Mei 2025",
+      desc: "Pendukung teknis infrastruktur sekolah: Mengelola lab komputer, menjaga keamanan jaringan, dan membantu solusi IT harian.",
     },
   ];
 

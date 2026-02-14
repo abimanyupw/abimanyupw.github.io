@@ -27,7 +27,7 @@ const Projects = () => {
     },
     {
       title: "Portofolio",
-      desc: "Modern portfolio built with React & Tailwind CSS for high performance..",
+      desc: "Modern portfolio built with React & Tailwind CSS for high performance.",
       image: "project/portofolio.jpg",
       githubLink: "https://github.com/abimanyupw/portofolio",
       demoLink: "https://portofolio-mu-tawny.vercel.app/", // Link github kamu
