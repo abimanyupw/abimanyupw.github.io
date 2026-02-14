@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import { ExternalLink, Github, X, Code2, Layers, Globe } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  X,
+  Code2,
+  Layers,
+  Globe,
+  Figma,
+} from "lucide-react";
 
 const ProjectCard = ({
   title,
@@ -10,6 +18,7 @@ const ProjectCard = ({
   githubLink,
   demoLink,
   techStack,
+  figmaLink,
 }) => {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -81,6 +90,16 @@ const ProjectCard = ({
                 className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 transition-all shadow-lg shadow-indigo-600/20"
               >
                 <Globe size={14} /> Live Preview
+              </a>
+            )}
+            {figmaLink && (
+              <a
+                href={figmaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-90 transition-all shadow-lg shadow-indigo-600/20"
+              >
+                <Figma size={14} /> Figma Link
               </a>
             )}
           </div>
