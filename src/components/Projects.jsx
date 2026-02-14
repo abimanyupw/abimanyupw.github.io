@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "AnyuNet",
       desc: "E-commerce platform for high-performance networking hardware and Wi-Fi solutions.",
-      image: "anyunet.jpg",
+      image: "project/anyunet.jpg",
       githubLink: "https://github.com/abimanyupw/Anyunet",
       demoLink: "https://anyunet.vercel.app/",
       techStack: ["HTML", "CSS", "Javascript", "Midtrans"],
@@ -14,21 +14,21 @@ const Projects = () => {
     {
       title: "Network IT CLub",
       desc: "Laravel-based educational platform offering free networking courses and student dashboards.",
-      image: "networkitclub.jpg",
+      image: "project/networkitclub.jpg",
       githubLink: "https://github.com/abimanyupw/networkitclub-laravel",
       techStack: ["Laravel", "Tailwind", "Mysql"],
     },
     {
       title: "Nyamnyam Food Finder",
       desc: "Flutter mobile application featuring dynamic restaurant listings via external API.",
-      image: "nyamnyam.jpg",
+      image: "project/nyamnyam.jpg",
       githubLink: "https://github.com/abimanyupw/nyamnyam-food-finder", // Link github kamu
       techStack: ["Flutter"],
     },
     {
       title: "Portofolio",
       desc: "Modern portfolio built with React & Tailwind CSS for high performance..",
-      image: "portofolio.jpg",
+      image: "project/portofolio.jpg",
       githubLink: "https://github.com/abimanyupw/portofolio",
       demoLink: "https://portofolio-mu-tawny.vercel.app/", // Link github kamu
       techStack: ["React", "Tailwind", "Vite"],
