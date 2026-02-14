@@ -70,25 +70,52 @@ export default function About() {
           {/* LEFT SIDE */}
           <div className="space-y-12">
             <div data-aos="fade-right">
-              <h3 className="text-4xl font-bold mb-6 flex items-center gap-3">
-                <User className="text-blue-500" size={24} />
+              <h3 className="text-4xl font-bold mb-8 flex items-center gap-3">
+                <User className="text-blue-500" size={32} />
                 Who Am I?
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-6 text-xl">
-                Saya adalah seorang siswa{" "}
-                <span className="text-white font-medium">
-                  Teknik Komputer dan Jaringan
-                </span>{" "}
-                yang memiliki minat besar dalam membangun ekosistem web modern.
-              </p>
-              <p className="text-gray-400 leading-relaxed text-xl">
-                Fokus utama saya saat ini adalah menciptakan pengalaman digital
-                yang inovatif melalui{" "}
-                <span className="text-blue-400">Laravel</span> dan{" "}
-                <span className="text-indigo-400">Figma</span>.
-              </p>
-            </div>
 
+              <div className="space-y-6 text-gray-400 leading-relaxed text-xl text-justify">
+                <p>
+                  Saya adalah mahasiswa{" "}
+                  <span className="text-white font-semibold">
+                    Teknik Telekomunikasi PENS
+                  </span>{" "}
+                  dengan latar belakang Teknik Komputer & Jaringan (TKJ). Saya
+                  berfokus pada pembangunan ekosistem web modern yang
+                  menggabungkan presisi infrastruktur dengan estetika visual.
+                </p>
+
+                <p>
+                  Saat ini, fokus utama saya adalah menciptakan pengalaman
+                  digital yang inovatif melalui:
+                </p>
+
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg mt-4">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 font-bold">▹</span>
+                    <span>
+                      <strong className="text-white">Development:</strong>{" "}
+                      Aplikasi web scalable dengan{" "}
+                      <span className="text-blue-400">Laravel</span>.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 font-bold">▹</span>
+                    <span>
+                      <strong className="text-white">Design:</strong> UI/UX
+                      intuitif melalui{" "}
+                      <span className="text-indigo-400">Figma</span>.
+                    </span>
+                  </li>
+                </ul>
+
+                <p className="pt-4 border-t border-gray-800 italic">
+                  "Saya percaya bahwa teknologi terbaik lahir dari harmoni
+                  antara desain yang matang dan sistem yang tangguh."
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-2 gap-4" data-aos="fade-up">
               <StatCard
                 icon={<Rocket className="text-blue-400" />}
