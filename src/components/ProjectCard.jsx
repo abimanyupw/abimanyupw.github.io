@@ -185,14 +185,26 @@ const ProjectCard = ({
                     )}
 
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <a
-                        href={githubLink || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 py-4 bg-white/5 text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex items-center justify-center gap-2"
-                      >
-                        <Github size={20} /> GitHub Code
-                      </a>
+                      {githubLink && (
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-4 bg-white/5 text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+                        >
+                          <Github size={20} /> GitHub Code
+                        </a>
+                      )}
+                      {figmaLink && (
+                        <a
+                          href={figmaLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-4 bg-white/5 text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+                        >
+                          <Figma size={20} /> Figma Link
+                        </a>
+                      )}
 
                       <button
                         onClick={() => setShowDetails(false)}
