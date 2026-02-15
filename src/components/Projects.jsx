@@ -33,6 +33,14 @@ const Projects = () => {
       demoLink: "https://portofolio-mu-tawny.vercel.app/", // Link github kamu
       techStack: ["React", "Tailwind", "Vite"],
     },
+    {
+      title: "Nova Beauty Mobile App Design",
+      desc: "Mobile App Design built with Figma.",
+      image: "project/novabeauty.jpg",
+      figmaLink:
+        "https://www.figma.com/design/tjRClM9KaHNupupCsCLIxC/Untitled?node-id=1-3&t=VtGavecUnStgX8uO-1",
+      techStack: ["Figma"],
+    },
   ];
 
   return (
