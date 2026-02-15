@@ -75,7 +75,7 @@ export default function About() {
                 Who Am I?
               </h3>
 
-              <div className="space-y-6 text-gray-400 leading-relaxed text-xl text-justify">
+              <div className="space-y-6 text-gray-400 leading-relaxed text-xl">
                 <p>
                   Saya adalah mahasiswa{" "}
                   <span className="text-white font-semibold">
