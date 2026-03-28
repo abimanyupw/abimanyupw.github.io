@@ -12,6 +12,14 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "Javascript", "Midtrans"],
     },
     {
+      title: "Bookshelf App",
+      desc: "Web application for managing book collections with CRUD operations and local storage.",
+      image: "project/bookshelf.jpg",
+      githubLink: "https://github.com/abimanyupw/bookshelf-app",
+      demoLink: "https://bookshelf-app-wheat-beta.vercel.app/",
+      techStack: ["HTML", "CSS", "Javascript"],
+    },
+    {
       title: "Network IT CLub",
       desc: "Laravel-based educational platform offering free networking courses and student dashboards.",
       image: "project/networkitclub.jpg",
